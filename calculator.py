@@ -1,9 +1,40 @@
-print("Enter numbers (type 'exit' to exit.)")
-x=0
+print("Enter numbers (+,x,-,/ for opeations) ('exit' to exit)")
+x=[]
 while(True):
     inpt = input()
+    val = 0
     if inpt=='exit': 
         break
-    else:      
-        x+=int(inpt) 
-print(x)
+    elif(inpt=='+'):
+        for numero in x:
+            val+=numero
+        print(val)
+        val=0 
+        x.clear()
+    elif(inpt=='-'):
+        val=x.pop(0)
+        for numero in x:
+            val-=numero
+        print(val)
+        val=0 
+        x.clear()
+    elif(inpt=='x'):
+        val=x.pop(0)
+        for numero in x:
+            val*=numero
+        print(val)
+        val=0
+        x.clear()
+    elif(inpt=='/'):
+        val = x.pop(0)
+        for numero in x:
+            val/=numero
+        print(val)
+        val=0 
+        x.clear()
+    else:
+        x.append(int(inpt))
+
+
+
+#if (inpt == '+'):
